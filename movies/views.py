@@ -6,5 +6,5 @@ from django.http import HttpResponse
 
 def inicio(request):
     return HttpResponse("<h1>Bienvenidos a CRUD con Django</h1>")
-def nosotros(request):
-    return render(request, 'pages/nosotros.html')
+def about(request):
+    return render(request, 'pages/about.html')
