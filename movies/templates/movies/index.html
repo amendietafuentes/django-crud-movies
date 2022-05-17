@@ -1,11 +1,11 @@
 {% extends "template.html" %} {% block title %} All Movies {% endblock %} {% block content %}
 
 <div class="card">
-    <div class="card-header">
-        List Movies
+    <div class="card-header bg-light text-right">
+        <a name="" id="" class="btn btn-warning" href="{% url 'edit' %}" role="button">Add movie</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Movies</h4>
+        <h4 class="card-title">All Movies</h4>
         <table class="table">
             <thead>
                 <tr>
