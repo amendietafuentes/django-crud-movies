@@ -20,7 +20,9 @@
                 {% for movie in movies %}
                 <tr>
                     <td>{{ movie.id }}</td>
-                    <td>{{ movie.cover }}</td>
+                    <td>
+                        <img width="150" src="{{ movie.cover.url }}" alt="{{ movie.title }}" title="{{ movie.title }}" srcset="">
+                    </td>
                     <td>{{ movie.title }}</td>
                     <td>{{ movie.description }}</td>
                     <td>
