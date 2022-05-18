@@ -17,13 +17,12 @@
                 </tr>
             </thead>
             <tbody>
+                {% for movie in movies %}
                 <tr>
-                    <td>1</td>
-                    <td>Image.png</td>
-                    <td>Django con Python</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quam ullam nobis dolor cumque, consequuntur, vitae provident doloremque suscipit soluta nostrum dignissimos, alias architecto ea! Fugit maiores corporis assumenda ab.
-                        Eos, necessitatibus, officiis harum culpa esse quos eaque sunt exercitationem ex tenetur distinctio corporis facere.
-                    </td>
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.cover }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.description }}</td>
                     <td>
                         <table class="table table-bordered">
                             <thead class="thead-inverse|thead-default">
@@ -49,11 +48,15 @@
                         </table>
                     </td>
                 </tr>
+                {% endfor %}
+
             </tbody>
         </table>
 
     </div>
-    <div class="card-footer text-muted"></div>
+    <div class="card-footer text-muted">
+
+    </div>
 </div>
 
 {% endblock %}
