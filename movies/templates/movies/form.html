@@ -9,6 +9,11 @@
 
     <div class="col-12 help-text">{{ field.field.errors }}</div>
 
-    <input name="save" id="save-btn" class="btn btn-primary" type="submit" value="Save Movie"> {% endfor %}
+    {% endfor %}
+
+    <div class="text-right mr-5 pr-5 mb-5">
+        <input name="save" id="save-btn" class="btn btn-warning text-uppercase font-weight-normal" type="submit" value="Save Movie">
+    </div>
+
 
 </form>

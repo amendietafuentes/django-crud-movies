@@ -1,5 +1,5 @@
 from urllib import request
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Movie
 from .forms import MovieForm
@@ -10,7 +10,10 @@ def movies(request):
     return render(request, 'movies/index.html', {'movies' : movies})
 
 def add(request):
-    form = MovieForm(request.POST or None)
+    form = MovieForm(request.POST or None, request.FILES or None)
+    if (form.is_valid()):
+        form.save()
+        return redirect('movies')
     return render(request, 'movies/create.html', {'form' : form})
 
 def edit(request):
