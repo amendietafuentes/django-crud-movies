@@ -1,4 +1,14 @@
-<div class="mb-3 ml-5 mr-5 p-5">
-    <label for="" class="form-label">Name: </label>
-    <input type="text" name="name" id="name" class="form-control" placeholder="Insert a name movie" aria-describedby="helpId">
-</div>
+<form enctype="multipart/form-data" action="" method="POST">
+
+    {% csrf_token %} {% for field in form %}
+
+    <div class="mb-3 ml-5 mr-5 p-5">
+        <label for="" class="form-label">{{ field.field.label }}: </label>
+        <input type="{{ field.field.widget.input_type }}" name="{{ field.field.name }}" id="{{ field.field.name }}" class="form-control" placeholder="{{ field.field.label }}" aria-describedby="helpId">
+    </div>
+
+    <div class="col-12 help-text">{{ field.field.errors }}</div>
+
+    <input name="save" id="save-btn" class="btn btn-primary" type="submit" value="Save Movie"> {% endfor %}
+
+</form>
