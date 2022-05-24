@@ -7,7 +7,7 @@ class Movie(models.Model):
     id = models.AutoField(primary_key=True)
     cover = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name='Cover')
     title = models.CharField(max_length=100, verbose_name='Title')
-    description = models.TextField(null=True, blank=True, max_length=500, verbose_name='Description')
+    description = models.TextField(null=True, verbose_name='Description')
 
 def __str__(self):
     row = "Title: " + self.title + " - " + "Description: " + self.description

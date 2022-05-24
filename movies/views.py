@@ -18,3 +18,9 @@ def add(request):
 
 def edit(request):
     return render(request, 'movies/edit.html')
+
+def delete(request, id):
+    movies = Movie.objects.get(id=id)
+    movies.delete()
+    return redirect('movies')
+
