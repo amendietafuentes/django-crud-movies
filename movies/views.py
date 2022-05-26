@@ -21,6 +21,9 @@ def add(request):
 def edit(request, id):
     movies = Movie.objects.get(id=id)
     form = MovieForm(request.POST or None, request.FILES or None, instance=movies)
+    if (form.is_valid() and request.POST):
+        form.save()
+        return redirect('movies')
     return render(request, 'movies/edit.html', {'form' : form})
 
 def delete(request, id):

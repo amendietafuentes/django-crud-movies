@@ -3,7 +3,10 @@
     {% csrf_token %} {% for field in form %}
 
     <div class="mb-3 ml-5 mr-5 p-5">
-        <label for="" class="form-label">{{ field.field.label }}: </label>
+        <label for="" class="form-label">{{ field.field.label }}: </label> {% if field.field.widget.input_type == 'file' and field.value %}
+
+        <img class="mt-2 mb-2" src="{{MEDIA_URL}}/images/{{field.value}}" alt="{{field.label}}" width="100"> {% endif %}
+
         <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" id="{{ field.name }}" class="form-control" placeholder="{{ field.value | default:'' }}" aria-describedby="helpId">
     </div>
 
